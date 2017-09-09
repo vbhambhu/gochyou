@@ -15,24 +15,12 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    @Autowired
-    DataSource dataSource;
-
-
-    @Autowired
-    public void configAuthentication(AuthenticationManagerBuilder auth) throws Exception {
-
-        auth.jdbcAuthentication().dataSource(dataSource)
-                .usersByUsernameQuery(
-                        "select username,pass, status from users where username=?");
-    }
-
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
 	   http.authorizeRequests()
-	   .antMatchers("/", "/api/**","/register").permitAll()
+	   .antMatchers("/", "/api/**").permitAll()
                .anyRequest().authenticated()
                .and()
                .formLogin()
@@ -41,6 +29,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                .and()
                .logout()
                .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-               .permitAll();
+               .permitAll()
+               .and().csrf();
     }
 }

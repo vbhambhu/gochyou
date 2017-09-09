@@ -10,16 +10,3 @@
 </form>
 
 
-
-<form th:action="@{/login}" method="post">
-    <div class="list-group list-group-sm">
-
-        <div class="list-group-item">
-            <input type="text" name="username" class="form-control no-border" placeholder="Username" th:value="spadmin"/>
-        </div>
-        <div class="list-group-item">
-            <input class="form-control no-border" name="password" type="password" placeholder="Password"  th:value="admin"/>
-        </div>
-    </div>
-    <input class="btn btn-primary btn-block btn-lg" type="submit" value="Log in" />
-</form>
