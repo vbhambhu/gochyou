@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="dynForms">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <meta content="ie=edge" http-equiv="x-ua-compatible" />
+    <meta th:name="${_csrf.parameterName}" th:content="${_csrf.token}"/>
+    <title>Hello AngularJS</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+
+
+    <div class="row">
+        <div class="col-lg-4 offset-lg-4">
+
+            <div class="navbar-brand-login block text-center">dynForms</div>
+            <div class="p-10 text-center"><strong>Login to your account</strong></div>
+
+            <div th:if="${param.error}" class="alert alert-danger" role="alert">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                Incorrect username or password.
+            </div>
+            <div th:if="${param.logout}" class="alert alert-success" role="alert">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                You have been logged out.
+            </div>
+
+
+            <form th:action="@{/login}" method="post">
+                <div class="list-group list-group-sm">
+
+                    <div class="list-group-item">
+                        <input type="text" name="username" class="form-control no-border" placeholder="Username" th:value="vkumar"/>
+                    </div>
+                    <div class="list-group-item">
+                        <input class="form-control no-border" name="password" type="password" placeholder="Password"  th:value="admin"/>
+                    </div>
+                </div>
+                <input class="btn btn-primary btn-block btn-lg" type="submit" value="Log in" />
+            </form>
+
+            <div class="text-center p-10">
+                <a href="/forgot-password">Forgot password?</a>
+            </div>
+
+            <hr class="line">
+
+
+            <p class="text-center">Register to create new account.</p>
+
+
+            <a href="/register" class="btn btn-secondary btn-block btn-lg" >Register new account</a>
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+</body>
+</html>
