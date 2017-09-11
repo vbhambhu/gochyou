@@ -25,4 +25,15 @@ public class MessageService {
         return messages;
 
     }
+
+    public List<Message> getMessages() {
+
+        String sqlString = "SELECT * FROM messages";
+
+        List<Message> messages = jdbcTemplate.query(sqlString, new BeanPropertyRowMapper<Message>(Message.class));
+
+        return messages;
+
+
+    }
 }
