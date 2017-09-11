@@ -28,6 +28,7 @@ public class HomeController {
     private ConnectionRepository connectionRepository;
 
 
+    
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String showHome(Locale locale, HttpSession httpSession){
 
