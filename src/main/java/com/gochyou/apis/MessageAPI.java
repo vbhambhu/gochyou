@@ -17,7 +17,7 @@ public class MessageAPI {
 
     @ResponseBody
     @RequestMapping(value="/api/messages", method= RequestMethod.GET)
-    public List<Message> saveSheet() {
+    public List<Message> getMessages() {
 
         int userId = 1;
 
