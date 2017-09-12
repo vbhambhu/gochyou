@@ -1,15 +1,31 @@
-<h3>Connect to Facebook</h3>
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layouts/frontend">
+<body>
+<div id="page" layout:fragment="content">
 
-<a href="/messages">Messages</a>
 
-<form th:action="@{/connect/facebook}"  method="POST">
+    <h3>Connect to Facebook</h3>
+
+    <a href="/messages">Messages</a>
+
+    <form th:action="@{/connect/facebook}"  method="POST">
 
 
-    <input type="hidden" name="scope" value="email,public_profile,user_friends" />
-    <div class="formInfo">
-        <p>You aren't connected to Facebook yet. Click the button to connect this application with your Facebook account.</p>
-    </div>
-    <p><button type="submit">Connect to Facebook</button></p>
-</form>
+        <input type="hidden" name="scope" value="email,public_profile,user_friends" />
+        <div class="formInfo">
+            <p>You aren't connected to Facebook yet. Click the button to connect this application with your Facebook account.</p>
+        </div>
+        <p><button type="submit">Connect to Facebook</button></p>
+    </form>
+
+
+
+</div>
+</body>
+</html>
+
 
 

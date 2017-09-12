@@ -28,7 +28,7 @@ public class HomeController {
     private ConnectionRepository connectionRepository;
 
 
-    
+
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String showHome(Locale locale, HttpSession httpSession){
 
@@ -38,7 +38,7 @@ public class HomeController {
 
 
 
-        System.out.println(welcome);
+     System.out.println(welcome);
 
         if(httpSession.getAttribute("isLoggedIn") != null){
             return "redirect:/messages";

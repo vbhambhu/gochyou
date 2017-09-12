@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head th:fragment="head">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta content="ie=edge" http-equiv="x-ua-compatible" />
+    <title th:text="${metaTitle} ? ${metaTitle} : 'GochYous' "></title>
+    <link th:each="css : ${cssFiles}" rel="stylesheet" th:href="@{/css/} + ${css}" />
+    <link rel="stylesheet" href="/css/frontend.css"/>
+</head>
+<body>
+<!-- top menu -->
+<nav class="navbar navbar-toggleable-md navbar-light" th:fragment="menu">
+    <button class="navbar-toggler navbar-toggler-right hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">Dashboard</a>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+
+        <ul>
+            <li th:each="menu : ${menus}">
+                <a th:href="${menu.key}" class="nav-link" th:text="${menu.val}">link</a>
+            </li>
+        </ul>
+
+
+        <ul>
+            <li th:each="lang : ${langs}">
+                <a th:href="${lang.key}" class="nav-link" th:text="${lang.val}">link</a>
+            </li>
+        </ul>
+
+
+
+
+
+
+
+
+
+
+
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a th:href="@{/}" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a th:href="@{/sheet?id=1}" class="nav-link">Sheet</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Help</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!-- //top menu -->
+
+
+
+<nav class="col-sm-3 col-md-2 hidden-xs-down sidebar" th:fragment="sidebar">
+    <div id="projectTree"></div>
+</nav>
+</body>
+</html>
