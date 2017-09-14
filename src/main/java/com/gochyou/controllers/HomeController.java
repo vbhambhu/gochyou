@@ -41,7 +41,7 @@ public class HomeController {
      System.out.println(welcome);
 
         if(httpSession.getAttribute("isLoggedIn") != null){
-            return "redirect:/messages";
+           // return "redirect:/messages";
         }
 
         return "home";

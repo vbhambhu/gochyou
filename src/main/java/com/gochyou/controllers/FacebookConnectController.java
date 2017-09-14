@@ -38,6 +38,8 @@ public class FacebookConnectController extends ConnectController {
         userService.saveUser(facebookUser);
 
 
+
+
         return "redirect:/messages";
     }
 

@@ -7,21 +7,43 @@
 <div id="page" layout:fragment="content">
 
 
+
+
+    <p th:text="#{menu.home}">Welcome to our grocery store!</p>
+
+
     <h3>Connect to Facebook</h3>
-
-    <a href="/messages">Messages</a>
-
     <form th:action="@{/connect/facebook}"  method="POST">
-
-
         <input type="hidden" name="scope" value="email,public_profile,user_friends" />
-        <div class="formInfo">
-            <p>You aren't connected to Facebook yet. Click the button to connect this application with your Facebook account.</p>
-        </div>
-        <p><button type="submit">Connect to Facebook</button></p>
+        <p><input type="submit" class="btn btn-primary btn-lg" id="fbconnect" value="Sign in via Facebook"/></p>
     </form>
 
 
+    <h3>Navbar example</h3>
+    <p>This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser's viewport.</p>
+
+
+    <h3>Navbar example</h3>
+    <p>This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser's viewport.</p>
+
+
+
+    <h3>Navbar example</h3>
+    <p>This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser's viewport.</p>
+
+
+    <h3>Navbar example</h3>
+    <p>This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser's viewport.</p>
+
+
+
+    <h3>Navbar example</h3>
+    <p>This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser's viewport.</p>
+
+
+
+    <h3>Navbar example</h3>
+    <p>This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser's viewport.</p>
 
 </div>
 </body>

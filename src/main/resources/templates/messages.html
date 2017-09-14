@@ -1,5 +1,24 @@
-This is message page.
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layouts/default">
+<body>
+<div id="page" layout:fragment="content">
 
-<a href="/">Home</a>
 
-<a href="/logout">logout</a>
+    <div th:each="conversation : ${conversations}">
+        <div th:text="${conversation.id}"></div>
+        <div th:text="${conversation.lastMsg}"></div>
+        <div th:text="${#dates.format(conversation.createdAt, 'MMM dd, yyyy - HH:mm a')}"></div>
+        <a th:href="${'/message/' + {conversation.id}}">view</a>
+        <hr>
+
+    </div>
+
+
+
+
+</div>
+</body>
+</html>

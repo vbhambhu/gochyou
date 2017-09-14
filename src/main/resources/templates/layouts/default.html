@@ -5,15 +5,15 @@
 <div th:replace="fragments/header :: menu">
     {menu}
 </div>
-<div class="container-fluid">
+<div class="container">
     <div class="row">
-        <nav th:replace="fragments/header :: sidebar">
+        <div th:replace="fragments/header :: sidebar">
             {sidebar}
-        </nav>
+        </div>
         <!-- page content -->
-        <main layout:fragment="content" class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
+        <div layout:fragment="content" class="col-md-9 col-sm-10 col-10 content">
             {content}
-        </main>
+        </div>
     </div>
     <!--  footer -->
     <div th:replace="fragments/footer :: footer">
