@@ -7,13 +7,15 @@
 <div id="page" layout:fragment="content">
 
 
+    Logged user: <span sec:authentication="name">Bob</span>
+    Roles: <span sec:authentication="principal.authorities">[ROLE_USER, ROLE_ADMIN]</span>
 
 
     <p th:text="#{menu.home}">Welcome to our grocery store!</p>
 
 
     <h3>Connect to Facebook</h3>
-    <form th:action="@{/connect/facebook}"  method="POST">
+    <form th:action="@{/signin/facebook}"  method="POST">
         <input type="hidden" name="scope" value="email,public_profile,user_friends" />
         <p><input type="submit" class="btn btn-primary btn-lg" id="fbconnect" value="Sign in via Facebook"/></p>
     </form>

@@ -23,9 +23,9 @@ public class MessageController {
     }
 
     @RequestMapping(value = "/messages", method = RequestMethod.GET)
-    public String showMessages(Model model){
+    public String showMessages(){
 
-        model.addAttribute("conversations", messageService.getConversationList(1));
+       // model.addAttribute("conversations", messageService.getConversationList(1));
 
         return "messages";
 

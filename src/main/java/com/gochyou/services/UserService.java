@@ -39,7 +39,7 @@ public class UserService {
             int id = createUser(facebookUser);
             httpSession.setAttribute("userId", id);
             user = new User();
-            user.setFirstNname(facebookUser.getFirst_name());
+            user.setFirstName(facebookUser.getFirst_name());
             user.setLastName(facebookUser.getLast_name());
             user.setEmail(facebookUser.getEmail());
         } else{ // if returning user

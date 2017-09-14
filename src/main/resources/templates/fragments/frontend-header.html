@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta content="ie=edge" http-equiv="x-ua-compatible" />
     <title th:text="${metaTitle} ? ${metaTitle} : 'GochYous' "></title>
-    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
     <link rel="stylesheet" href="/css/frontend.css"/>
 </head>
 <body>
@@ -17,7 +17,7 @@
 
     <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #e3f2fd;">
         <div class="container">
-        <a class="navbar-brand" href="#">gochyou</a>
+        <a class="navbar-brand" href="/">gochyou</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -34,7 +34,7 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Login</a>
+                    <a class="nav-link" th:href="@{/login}">Login</a>
                 </li>
 
             </ul>
